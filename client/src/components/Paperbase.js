@@ -13,7 +13,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="https://github.com/zeebigbadkitty/Operation-Wellness.git">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}.
@@ -24,9 +24,9 @@ function Copyright() {
 let theme = createTheme({
   palette: {
     primary: {
-      light: '#63ccff',
-      main: '#009be5',
-      dark: '#006db3',
+      light: '#FFE2F2ff',
+      main: '#E7AAEAff',
+      dark: '#7E1E93ff',
     },
   },
   typography: {
