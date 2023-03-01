@@ -9,6 +9,12 @@ import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
 
+
+const inlineStyle = {
+  backgroundColor: '#642073ff',
+  color: '#FFE2F2ff',
+}
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -24,9 +30,9 @@ function Copyright() {
 let theme = createTheme({
   palette: {
     primary: {
-      light: '#63ccff',
-      main: '#009be5',
-      dark: '#006db3',
+      light: '#FFE2F2ff',
+      main: '#FFE2F2ff',
+      dark: '#7E1E93ff',
     },
   },
   typography: {
@@ -59,7 +65,7 @@ theme = {
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#081627',
+          backgroundColor: '#642073ff',
         },
       },
     },
@@ -128,7 +134,7 @@ theme = {
       styleOverrides: {
         root: {
           '&.Mui-selected': {
-            color: '#4fc3f7',
+            color: '#FFE2F2ff',
           },
         },
       },
@@ -184,6 +190,7 @@ export default function Paperbase() {
         >
           {isSmUp ? null : (
             <Navigator
+              sx={{backgroundColor: '#642073ff',}}
               PaperProps={{ style: { width: drawerWidth } }}
               variant="temporary"
               open={mobileOpen}
@@ -191,17 +198,17 @@ export default function Paperbase() {
             />
           )}
 
-          <Navigator
+          <Navigator 
             PaperProps={{ style: { width: drawerWidth } }}
-            sx={{ display: { sm: 'block', xs: 'none' } }}
+            sx={{ display: { sm: 'block', xs: 'none' },  }}
           />
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Header onDrawerToggle={handleDrawerToggle} />
-          <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#eaeff1' }}>
+          <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#F9E9FAff' }}>
             <Content />
           </Box>
-          <Box component="footer" sx={{ p: 2, bgcolor: '#eaeff1' }}>
+          <Box component="footer" sx={{ p: 2, bgcolor: '#FFE2F2ff',}}> 
             <Copyright />
           </Box>
         </Box>
