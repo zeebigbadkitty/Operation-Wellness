@@ -12,39 +12,38 @@ import PeopleIcon from '@mui/icons-material/People';
 import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
-import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
-import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
-import TimerIcon from '@mui/icons-material/Timer';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PhonelinkSetupIcon from '@mui/icons-material/PhonelinkSetup';
+// import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
+// import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
+// import TimerIcon from '@mui/icons-material/Timer';
+// import SettingsIcon from '@mui/icons-material/Settings';
+// import PhonelinkSetupIcon from '@mui/icons-material/PhonelinkSetup';
 
 const categories = [
   {
-    id: 'Build',
+    id: 'TaskBar',
     children: [
       {
-        id: 'Authentication',
-        icon: <PeopleIcon />,
+        id: 'Profile', icon: <PeopleIcon />,
         active: true,
       },
-      { id: 'Database', icon: <DnsRoundedIcon /> },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Hosting', icon: <PublicIcon /> },
-      { id: 'Functions', icon: <SettingsEthernetIcon /> },
-      {
-        id: 'Machine learning',
-        icon: <SettingsInputComponentIcon />,
-      },
+      { id: 'TBN', icon: <DnsRoundedIcon /> },
+      { id: 'TBN', icon: <PermMediaOutlinedIcon /> },
+      { id: 'TBN', icon: <PublicIcon /> },
+      // { id: 'Functions', icon: <SettingsEthernetIcon /> },
+      // {
+      //   id: 'Machine learning',
+      //   icon: <SettingsInputComponentIcon />,
+      // },
     ],
   },
-  {
-    id: 'Quality',
-    children: [
-      { id: 'Analytics', icon: <SettingsIcon /> },
-      { id: 'Performance', icon: <TimerIcon /> },
-      { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
-    ],
-  },
+  // {
+  //   id: 'Quality',
+  //   children: [
+  //     { id: 'Analytics', icon: <SettingsIcon /> },
+  //     { id: 'Performance', icon: <TimerIcon /> },
+  //     { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
+  //   ],
+  // },
 ];
 
 const item = {
@@ -68,14 +67,14 @@ export default function Navigator(props) {
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
-        <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
-          Paperbase
+        <ListItem sx={{ ...item, ...itemCategory, fontSize: 23, color: '#fff' }}>
+          LOGO
         </ListItem>
         <ListItem sx={{ ...item, ...itemCategory }}>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
-          <ListItemText>Project Overview</ListItemText>
+          <ListItemText>Home</ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
           <Box key={id} sx={{ bgcolor: '#101F33' }}>
