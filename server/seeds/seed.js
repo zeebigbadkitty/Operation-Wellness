@@ -12,4 +12,6 @@ db.once('open', async () => {
   } catch (err) {
     throw err;
   }
+
+  const drugs = await Drugs.insertMany(drugSeeds);
 });
