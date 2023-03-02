@@ -53,6 +53,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: '#E7AAEAff',
               textDecoration: 'none',
+              
             }}
           >
             Operation Wellness
