@@ -19,6 +19,21 @@ const resolvers = {
       //This query should return a user by their id
     },
   },
+
+  Mutation: {
+     addSavedDrugs: async (parent, { drugs }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedDrugs: drugs } },
+          { new: true }
+        );
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+  }
 };
 
 module.exports = resolvers;

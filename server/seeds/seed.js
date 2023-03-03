@@ -3,15 +3,16 @@ const { Drugs } = require('../models');
 const drugSeeds = require('./drugs2.json');
 
 db.once('open', async () => {
+  console.log('hello')
   try {
-    await Drugs.deleteMany({}); //if we're using multiple files, remove this.
+    await Drugs.collection.drop(); //if we're using multiple files, remove this.
     await Drugs.create(drugSeeds);
 
     console.log('all done!');
-    process.exit(0);
+   
   } catch (err) {
     throw err;
   }
-
+  process.exit(0);
   const drugs = await Drugs.insertMany(drugSeeds);
 });

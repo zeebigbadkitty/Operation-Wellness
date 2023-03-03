@@ -19,6 +19,7 @@ const typeDefs = gql`
         name: String!
         email: String!
         password: String!
+        savedDrugs: [Drugs]
     }
 
     type Query {
@@ -27,14 +28,11 @@ const typeDefs = gql`
         user(userId: String): [User]
     }
 
-    type SavedDrugs {
-        _id: ID!
-        drugs: [Drugs]
-    }
     
     type Mutation {
         addUser(name: String!): User
         addDrugs(productndc: String, producttypename: String nonproprietaryname: String!, dosageformname: String, routename: String, active_numerator_strength: String!, active_ingred_unit: String!, ndc_exclude_flag: String, listing_record_certified_through: String): Drugs
+        addSavedDrugs(drugs: [ID]!): User
       }
 `;
 
