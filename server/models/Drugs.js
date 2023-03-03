@@ -38,6 +38,7 @@ const drugSchema = new Schema({
     listing_record_certified_through:{
         type: String,
     },
+    
 });
 
 
