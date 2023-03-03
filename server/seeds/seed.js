@@ -1,10 +1,10 @@
 const db = require('../config/connection');
 const { Drugs } = require('../models');
-const drugSeeds = require('./drugsjson.json');
+const drugSeeds = require('./drugs2.json');
 
 db.once('open', async () => {
   try {
-    await Drugs.deleteMany({});
+    await Drugs.deleteMany({}); //if we're using multiple files, remove this.
     await Drugs.create(drugSeeds);
 
     console.log('all done!');

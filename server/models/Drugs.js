@@ -4,41 +4,27 @@ const { Schema, model } = require('mongoose');
 const drugSchema = new Schema({
     productndc:{
         type: String,
-        unique: true,
         trim: true
     },
-    producttypename:{
+    proprietaryname:{
         type: String,
         required: true,
     },
     nonproprietaryname:{
         type: String,
     },
-    dosageformname:{
-        type: String,
-    },
-  
-    routename:{
-        type: String,
-    },
-  
     active_numerator_strength:{
         type: String,
-        required: true,
     },
   
     active_ingred_unit:{
         type: String,
     },
   
-    ndc_exclude_flag:{
+    pharm_classes:{
         type: String,
     },
-  
-    listing_record_certified_through:{
-        type: String,
-    },
-    
+
 });
 
 
