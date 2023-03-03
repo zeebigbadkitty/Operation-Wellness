@@ -1,40 +1,39 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-    type Drugs {
+    type Drug {
         _id: ID!
-        productndc: String!
+        productndc: String
         producttypename: String!
-        nonproprietaryname: String
-        dosageformname: String
-        routename: String
         active_numerator_strength: String!
-        active_ingred_unit: String
-        ndc_exclude_flag: String
-        listing_record_certified_through: String
+        active_ingred_unit: String!
     }
-
+    input DrugInput {
+        productndc: String
+        producttypename: String!
+        active_numerator_strength: String!
+        active_ingred_unit: String!
+    }
     type User {
         _id: ID!
         name: String!
         email: String!
         password: String!
-        savedDrugs: [Drugs]
+        savedDrugs: [Drug]
     }
 
     type Query {
-        userDrugs(userId: String): [Drugs]
-        findDrugs(drugName: String): [Drugs]
+        userDrugs(userId: String): [Drug]
+        findDrugs(drugName: String): [Drug]
         user(userId: String): [User]
     }
 
     
     type Mutation {
         addUser(name: String!): User
-        addDrugs(productndc: String, producttypename: String nonproprietaryname: String!, dosageformname: String, routename: String, active_numerator_strength: String!, active_ingred_unit: String!, ndc_exclude_flag: String, listing_record_certified_through: String): Drugs
+        addDrugs(drugs: [DrugInput]): [Drug]
         addSavedDrugs(drugs: [ID]!): User
       }
 `;
-
 
 module.exports = typeDefs;

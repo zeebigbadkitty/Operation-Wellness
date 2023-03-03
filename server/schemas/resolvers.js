@@ -1,15 +1,15 @@
-const { Drugs, User } = require("../models");
+const { Drug, User } = require("../models");
 
 const resolvers = {
   Query: {
     userDrugs: async (userId) => {
-      return Drugs.find({});
+      return Drug.find({});
       //This query should return all the drugs in our database by user
     },
 
     findDrugs: async (drugName) => {
       var regexp = new RegExp("^" + drugName);
-      return Drugs.find({ proprietaryname: regexp });
+      return Drug.find({ proprietaryname: regexp });
       //This query should return all the drugs in our database by drug name
     },
 
@@ -21,7 +21,7 @@ const resolvers = {
   },
 
   Mutation: {
-     addSavedDrugs: async (parent, { drugs }, context) => {
+    addSavedDrugs: async (parent, { drugs }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -33,7 +33,8 @@ const resolvers = {
       }
 
       throw new AuthenticationError("You need to be logged in!");
-  }
+    }, // finish this
+  },
 };
 
 module.exports = resolvers;
