@@ -25,7 +25,7 @@ const userSchema = new Schema({
   // },
   savedDrugs: [{
     type: Schema.Types.ObjectId,
-    ref: 'Drugs'
+    ref: 'Drug'
   }],
   
 });

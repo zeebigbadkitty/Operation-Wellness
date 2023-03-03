@@ -28,6 +28,6 @@ const drugSchema = new Schema({
 });
 
 
-const Drugs = model('Drugs', drugSchema);
+const Drug = model('Drug', drugSchema);
 
-module.exports = Drugs;
+module.exports = Drug;
