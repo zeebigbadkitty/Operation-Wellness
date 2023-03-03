@@ -18,7 +18,11 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-
+  savedDrugs: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Drugs'
+  }],
+  
 });
 
 const User = model('User', userSchema);
