@@ -22,8 +22,9 @@ const typeDefs = gql`
     }
 
     type Query {
-        drugs: [Drugs]
-        user(_id: String): [User]
+        userDrugs(userId: String): [Drugs]
+        findDrugs(drugName: String): [Drugs]
+        user(userId: String): [User]
     }
 
     type SavedDrugs {
