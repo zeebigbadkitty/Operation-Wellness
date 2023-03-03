@@ -8,6 +8,7 @@ import Link from '@mui/material/Link';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
+import logo2 from '../assets/logo2.';
 
 
 // const inlineStyle = {
