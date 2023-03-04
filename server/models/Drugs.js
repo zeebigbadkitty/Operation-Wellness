@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+
 
 const drugSchema = new Schema({
     productndc:{
@@ -38,6 +38,7 @@ const drugSchema = new Schema({
     listing_record_certified_through:{
         type: String,
     },
+    
 });
 
 

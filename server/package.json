@@ -5,18 +5,19 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "seed": "node seeds/seed.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon",
+    "seed": "node seeders/seed.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^3.6.2",
+    "apollo-server-express": "^3.6.1",
     "express": "^4.17.2",
-    "graphql": "^16.3.0",
-    "mongoose": "^6.1.8"
+    "graphql": "^16.2.0",
+    "mongoose": "^6.1.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.3"
   }
 }
