@@ -23,6 +23,27 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+//Get request for the drugs collection
+app.get('/drugs', async (req, res) => {
+  try {
+    const drugs = await Drug.find();
+    res.json(drugs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+//Get request for drugs by user ID
+app.get('/drugs', authMiddleware, async (req, res) => {
+  try {
+    const drugs = await Drug.find({ userId: req.user._id });
+    res.json(drugs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
