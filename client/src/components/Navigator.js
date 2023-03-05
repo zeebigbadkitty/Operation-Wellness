@@ -13,6 +13,7 @@ import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
 import { ImageList, ImageListItem } from '@mui/material';
+
 // import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
 // import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
 // import TimerIcon from '@mui/icons-material/Timer';
@@ -27,24 +28,9 @@ const categories = [
         id: 'Profile', icon: <PeopleIcon />,
         active: true,
       },
-      { id: 'TBN', icon: <DnsRoundedIcon /> },
-      { id: 'TBN', icon: <PermMediaOutlinedIcon /> },
-      { id: 'TBN', icon: <PublicIcon /> },
-      // { id: 'Functions', icon: <SettingsEthernetIcon /> },
-      // {
-      //   id: 'Machine learning',
-      //   icon: <SettingsInputComponentIcon />,
-      // },
+      { id: 'Logout', icon: <PublicIcon /> },
     ],
   },
-  // {
-  //   id: 'Quality',
-  //   children: [
-  //     { id: 'Analytics', icon: <SettingsIcon /> },
-  //     { id: 'Performance', icon: <TimerIcon /> },
-  //     { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
-  //   ],
-  // },
 ];
 
 const item = {
