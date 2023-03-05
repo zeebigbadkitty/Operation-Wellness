@@ -79,7 +79,7 @@ export default function Navigator(props) {
           <ListItemText>Home</ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
-          <Box key={id} sx={{ bgcolor: ' #6B0085' }}>
+          <Box key={id} sx={{ bgcolor: ' #642073ff' }}>
             <ListItem sx={{ py: 2, px: 3 }}>
               <ListItemText sx={{ color: '#fff' }}>{id}</ListItemText>
             </ListItem>
