@@ -8,12 +8,39 @@ import Link from '@mui/material/Link';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
+// const { gql } = require("apollo-server-express");
 
+// // import { useMutation } from "@apollo/client";
+// import { LOGIN_MUTATION, LOGOUT_MUTATION } from "./utils/mutations";
 
-// const inlineStyle = {
-//   backgroundColor: '#642073ff',
-//   color: '#FFE2F2ff',
+// function LoginForm() {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const [login, { data: loginData }] = useMutation(LOGIN_MUTATION);
+//   const [logout, { data: logoutData }] = useMutation(LOGOUT_MUTATION);
+
+//   const handleLogin = async () => {
+//     const { data } = await login({ variables: { email, password } });
+//     // handle login success and store token in local storage or cookie
+//   };
+
+//   const handleLogout = async () => {
+//     await logout();
+//     // handle logout success and remove token from local storage or cookie
+//   };
+
+//   return (
+//     <>
+//       <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+//       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+//       <button onClick={handleLogin}>Login</button>
+//       <button onClick={handleLogout}>Logout</button>
+//     </>
+//   );
 // }
+
+
 
 function Copyright() {
   return (
