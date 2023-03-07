@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,13 +8,11 @@ import Link from '@mui/material/Link';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // const { gql } = require("apollo-server-express");
 
@@ -48,14 +46,17 @@ import Signup from './components/Signup';
 //   );
 // }
 
-
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Operation Wellness - A Reactstreet Boys Application - 2023
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
@@ -216,6 +217,9 @@ export default function Paperbase() {
   };
 
   return (
+    
+    <ApolloProvider client={client}>
+      <Router>
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <CssBaseline />
@@ -241,7 +245,9 @@ export default function Paperbase() {
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Header onDrawerToggle={handleDrawerToggle} />
           <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#F9E9FAff' }}>
-            <Content />
+            <Routes>
+              <Route path="/" element={<Content />} />
+            </Routes>
           </Box>
           <Box component="footer" sx={{ p: 2, bgcolor: '#FFE2F2ff',}}> 
             <Copyright />
@@ -249,5 +255,7 @@ export default function Paperbase() {
         </Box>
       </Box>
     </ThemeProvider>
+    </Router>
+    </ApolloProvider>
   );
 }
