@@ -64,8 +64,8 @@ export default function Navigator(props) {
       <Box>
         <ImageList sx={{width: '25', heigh: '25'}} cols={1}>
         {itemData.map((image, index) => (
-          <ImageListItem key={index}>
-            <img src={image.img} alt={image.title} loading='lazy'/>
+          <ImageListItem>
+             <img src={require('../assets/logo4.png').default} alt="Logo" loading='lazy'/>
           </ImageListItem>
         ))}
         </ImageList>

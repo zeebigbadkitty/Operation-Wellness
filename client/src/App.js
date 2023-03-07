@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,19 +8,79 @@ import Link from '@mui/material/Link';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
+import { useMutation } from '@apollo/client';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { setContext } from '@apollo/client/link/context';
 
+// const { gql } = require("apollo-server-express");
 
-// const inlineStyle = {
-//   backgroundColor: '#642073ff',
-//   color: '#FFE2F2ff',
+// // import { useMutation } from "@apollo/client";
+// import { LOGIN_MUTATION, LOGOUT_MUTATION } from "./utils/mutations";
+
+// function LoginForm() {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const [login, { data: loginData }] = useMutation(LOGIN_MUTATION);
+//   const [logout, { data: logoutData }] = useMutation(LOGOUT_MUTATION);
+
+//   const handleLogin = async () => {
+//     const { data } = await login({ variables: { email, password } });
+//     // handle login success and store token in local storage or cookie
+//   };
+
+//   const handleLogout = async () => {
+//     await logout();
+//     // handle logout success and remove token from local storage or cookie
+//   };
+
+//   return (
+//     <>
+//       <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+//       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+//       <button onClick={handleLogin}>Login</button>
+//       <button onClick={handleLogout}>Logout</button>
+//     </>
+//   );
 // }
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/zeebigbadkitty/Operation-Wellness">
+        Operation Wellness - A Reactstreet Boys Application 
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
@@ -181,6 +241,9 @@ export default function Paperbase() {
   };
 
   return (
+    
+    <ApolloProvider client={client}>
+      <Router>
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <CssBaseline />
@@ -206,7 +269,11 @@ export default function Paperbase() {
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Header onDrawerToggle={handleDrawerToggle} />
           <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#F9E9FAff' }}>
-            <Content />
+            <Routes>
+              <Route path="/" element={<Content />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
           </Box>
           <Box component="footer" sx={{ p: 2, bgcolor: '#FFE2F2ff',}}> 
             <Copyright />
@@ -214,5 +281,7 @@ export default function Paperbase() {
         </Box>
       </Box>
     </ThemeProvider>
+    </Router>
+    </ApolloProvider>
   );
 }
