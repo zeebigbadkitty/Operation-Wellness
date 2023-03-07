@@ -16,9 +16,18 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
+    allowNull: false,
     minlength: 5,
   },
-
+  // user_admin: {
+  //   type: DataTypes.BOOLEAN,
+  //   defaultValue: false,
+  // },
+  savedDrugs: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Drug'
+  }],
+  
 });
 
 const User = model('User', userSchema);
