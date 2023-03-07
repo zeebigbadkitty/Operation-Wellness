@@ -2,6 +2,14 @@
     {
     "email": "123@gmail.com",
     "user_admin": true,
-    "password": "Admin123"
+    "password": "Admin123",
+    "savedDrugs": [
+        {
+            "proprietaryname": "Advil",
+            "active_numerator_strength": "256",
+            "active_ingred_unit": "mg/1"
+        }
+
+    ]
     }
 ]
