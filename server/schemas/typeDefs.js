@@ -37,7 +37,7 @@ const typeDefs = gql`
     addUser(name: String!): User
     addDrugs(drugs: [DrugInput]): [Drug]
     addSavedDrugs(drugs: [ID]!): User
-    login(email: String!, password: String!): AuthPayload
+    login(email: String!, password: String!): Auth
     logout: Boolean
   }
 `;
