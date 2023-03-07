@@ -19,10 +19,10 @@ const userSchema = new Schema({
     allowNull: false,
     minlength: 5,
   },
-  // user_admin: {
-  //   type: DataTypes.BOOLEAN,
-  //   defaultValue: false,
-  // },
+  user_admin: {
+    type: Boolean,
+    defaultValue: false,
+  },
   savedDrugs: [{
     type: Schema.Types.ObjectId,
     ref: 'Drug'

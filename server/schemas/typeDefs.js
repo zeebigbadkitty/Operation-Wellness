@@ -19,13 +19,15 @@ const typeDefs = gql`
     name: String!
     email: String!
     password: String!
+    user_admin: Boolean!
     savedDrugs: [Drug]
   }
 
   type Query {
     userDrugs(userId: String): [Drug]
     findDrugs(drugName: String): [Drug]
-    user(userId: String): [User]
+    allUsers: [User]
+    user: User
   }
 
   type Auth {
