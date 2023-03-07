@@ -20,10 +20,13 @@ export default function DataTable() {
   React.useEffect(() => {
     const getData = async () => {
       try {
+
         const response = await fetch('/drugs');
         const data = await response.json();
         setRows(data);
         setIsLoading(false);
+        
+        
       } catch (error) {
         console.error(error);
         setIsLoading(false);

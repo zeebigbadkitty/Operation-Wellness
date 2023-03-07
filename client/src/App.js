@@ -10,6 +10,7 @@ import Content from './components/Content';
 import Header from './components/Header';
 
 
+
 // const inlineStyle = {
 //   backgroundColor: '#642073ff',
 //   color: '#FFE2F2ff',
