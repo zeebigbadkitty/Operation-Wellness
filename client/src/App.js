@@ -247,6 +247,8 @@ export default function Paperbase() {
           <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#F9E9FAff' }}>
             <Routes>
               <Route path="/" element={<Content />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
             </Routes>
           </Box>
           <Box component="footer" sx={{ p: 2, bgcolor: '#FFE2F2ff',}}> 
