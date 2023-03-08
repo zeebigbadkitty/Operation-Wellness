@@ -36,24 +36,26 @@ const userSchema = new Schema({
     drug: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Drug',
-      required: true
+      required: false
     },
     productndc: {
       type: String,
     },
     proprietaryname: {
       type: String,
+      required: true
     },
     active_numerator_strength: {
       type: String,
+       required: true
     },
     active_ingred_unit: {
       type: String,
+       required: true
     },    
-    quantity: {
+   quantity: {
       type: Number,
-      required: true,
-    }
+    },
   }],
 });
 
