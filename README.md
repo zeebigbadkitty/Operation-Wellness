@@ -26,6 +26,11 @@ To install the needed dependencies, run the following commands:
 ```
 ___
 
+## Screenshot
+
+![Screenshot 2023-03-08 130032](https://user-images.githubusercontent.com/112591613/223811781-eee619b8-f2c1-4fd7-b9e9-8edc85ed66b9.png)
+
+___
 ## Usage
 
 After running the installation instructions, it will lead you to the webpage to signup for an account. Once you create an account, you are able to log into the webpage, and then view your table of medications. On the left hand side, you'll have the option to add medications/supplements onto the table to keep track of all items being taken. This will help the users to stay on top of the routine medications they are taking, as well as what they are for and how to take them.
