@@ -10,10 +10,14 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
+  
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0"
+  },
+  "engines": {
+    "node": "^16.x"
   },
   "dependencies": {
     "apollo-server-express": "^3.12.0"
