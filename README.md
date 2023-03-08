@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Operation: Wellness
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  
 
-## Available Scripts
+  ## Description
+  
+  Through Operation: Wellness, a user who is taking medications and supplements will be able to add both over the counter and perscriptions items to their medications list so that they can keep track of said medications/supplements.
 
-In the project directory, you can run:
+  ##### User Story
 
-### `npm start`
+  AS A USER who is taking medications and/or supplements,
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  I WANT TO be able to add both over the counter and prescription items to my med list
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  SO THAT I will know what medications I’m taking.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
+  ## Table of Contents 
+  
+  * [Installation](#installation)
+  
+  * [Usage](#usage)
+    
+  * [Contributing](#contributing)
+  
+  * [Questions](#questions)
+  
+  ## Installation
+  
+  To install necessary dependencies, run the following command:
+  
+  ```
+  1. "npm i" on server and client, 2. "npm build" on client, 3. "npm run develop" on root
+  ```
+  
+  ## Usage
+  
+  After running the installation instructions, it will lead you to the webpage to signup for an account. Once you create an account, you are able to log into the webpage, and then view your table of medications. On the left hand side, you'll have the option to add medications/supplements onto the table to keep track of all items being taken. This will help the users to stay on top of the routine medications they are taking, as well as what they are for and how to take them.
+  
+  
+  
+  ## Contributing
+  
+  Please don't hesitate to reach out through the Github links below to report any bugs, suggest improvements on how to make things more streamline, or to submit a code change you think may improve the overall app.
+  
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ## Questions
+  
+  If you have any questions about the repo, open an issue or contact any of us at:
+  *Candice*: https://github.com/zeebigbadkitty; 
+  *Janvier*: https://github.com/JanvierB1; 
+  *Nataly (Naty)*: https://github.com/uhdznataly; 
+  *Joseph*: https://github.com/IRiceKrispie; 
+  *Cesar*: https://github.com/ceca24
