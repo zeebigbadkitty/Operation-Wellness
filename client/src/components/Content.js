@@ -5,13 +5,14 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER_DRUGS, QUERY_SINGLE_DRUG } from "../utils/queries";
 import { CSVLink, CSVDownload } from "react-csv";
 
-//use query hook from Apollo to get data from the server
+
 
 const columns = [
   { field: "proprietaryname", headerName: "Drug Name", width: 450 },
   { field: "active_numerator_strength", headerName: "Strength", width: 200 },
   { field: "active_ingred_unit", headerName: "Strength Unit", width: 200 },
 ];
+
 
 export default function DataTable() {
   const [rows, setRows] = React.useState([]);
