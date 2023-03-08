@@ -8,11 +8,7 @@ import Link from '@mui/material/Link';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
-<<<<<<< HEAD
 import logo2 from '../assets/logo2.';
-=======
-// const { gql } = require("apollo-server-express");
->>>>>>> c3ec6a89738820156bef801c25ec5751ad25619e
 
 // // import { useMutation } from "@apollo/client";
 // import { LOGIN_MUTATION, LOGOUT_MUTATION } from "./utils/mutations";
