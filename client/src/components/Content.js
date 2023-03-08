@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from "axios"
 
@@ -49,15 +49,3 @@ export default function DataTable() {
 }
 
 
-const temp = [
-  { id: 1, noon: 'lexapro', am: 'Naloxen', pm:'Heloo', other: 'Hello World' },
-  { id: 2, noon: 'Fetanyl', am: 'Rybelsus', pm: 'Cymbalta', other: 'Hello World'},
-  { id: 3, noon: 'Oxycodon', am: 'Wegovy', pm:'Adderall', other: 'Hello World'},
-  { id: 4, noon: 'Vicodin', am: 'Xanax', pm: 'Viagra', other: 'Hello World'},
-  { id: 5, noon: 'Bunavail', am: 'Ativan', pm: 'Gilenya', other: 'Hello World'},
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-];
