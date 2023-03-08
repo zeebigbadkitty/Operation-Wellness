@@ -6,6 +6,7 @@ import { QUERY_USER_DRUGS, QUERY_SINGLE_DRUG } from "../utils/queries";
 import { CSVLink, CSVDownload } from "react-csv";
 
 
+//JWT TOKEN NEEDS TO BE RETRIEVED SO WE CAN ADD TO LINE 22
 
 const columns = [
   { field: "proprietaryname", headerName: "Drug Name", width: 450 },
