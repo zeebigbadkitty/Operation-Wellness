@@ -1,6 +1,13 @@
 const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
+const drugSchema = require('./Drug'); 
 const mongoose = require('mongoose');
+
+const savedDrugSchema = new mongoose.Schema({
+  drug: { type: mongoose.Schema.Types.ObjectId, ref: 'Drug', required: true },
+  quantity: { type: Number, required: true },
+});
+
 
 const userSchema = new Schema({
   name: {
@@ -23,28 +30,31 @@ const userSchema = new Schema({
   },
   user_admin: {
     type: Boolean,
-    defaultValue: false,
+    default: false,
   },
   savedDrugs: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Drug'
+    drug: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Drug',
+      required: true // make the drug field required
+    },
   }],
-  
 });
 
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
 
-  next();
-});
+  userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
 
-// custom method to compare and validate password for logging in
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
+    next();
+  });
+
+  // custom method to compare and validate password for logging in
+  userSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
 
 const User = mongoose.model('User', userSchema);
 
