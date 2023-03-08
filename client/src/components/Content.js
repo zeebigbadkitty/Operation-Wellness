@@ -8,9 +8,9 @@ import { CSVLink, CSVDownload } from "react-csv";
 //use query hook from Apollo to get data from the server
 
 const columns = [
-  { field: "proprietaryname", headerName: "Drug Name", width: 150 },
-  { field: "active_numerator_strength", headerName: "Strength", width: 150 },
-  { field: "active_ingred_unit", headerName: "Strength Unit", width: 160 },
+  { field: "proprietaryname", headerName: "Drug Name", width: 450 },
+  { field: "active_numerator_strength", headerName: "Strength", width: 200 },
+  { field: "active_ingred_unit", headerName: "Strength Unit", width: 200 },
 ];
 
 export default function DataTable() {
