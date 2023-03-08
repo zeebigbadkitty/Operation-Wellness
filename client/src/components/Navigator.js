@@ -13,6 +13,8 @@ import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
 import { ImageList, ImageListItem } from '@mui/material';
+import MedicationLiquidIcon from '@mui/icons-material/MedicationLiquid';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 // import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
 // import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
@@ -28,13 +30,13 @@ const categories = [
         id: 'Profile', icon: <PeopleIcon />,
         active: true,
       },
-      { id: 'Logout', icon: <PublicIcon /> },
+      { id: 'Logout', icon: <LogoutIcon /> },
     ],
   },
 ];
 
 const item = {
-  py: '2px',
+  py: '10px',
   px: 3,
   color: 'rgba(255, 255, 255, 0.7)',
   '&:hover, &:focus': {
@@ -74,9 +76,9 @@ export default function Navigator(props) {
 
         <ListItem sx={{ ...item, ...itemCategory }}>
           <ListItemIcon>
-            <HomeIcon />
+            <MedicationLiquidIcon />
           </ListItemIcon>
-          <ListItemText>Home</ListItemText>
+          <ListItemText>Add Medication</ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
           <Box key={id} sx={{ bgcolor: ' #642073ff' }}>
@@ -92,7 +94,7 @@ export default function Navigator(props) {
               </ListItem>
             ))}
 
-            <Divider sx={{ mt: 2 }} />
+            <Divider sx={{ mt: 4 }} />
           </Box>
         ))}
       </List>
