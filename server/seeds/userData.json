@@ -1,16 +1,61 @@
 [
-    {
-    "name": "candice",
-    "email": "123@gmail.com",
-    "user_admin": true,
-    "password": "Admin123",
+  {
+    "name": "michael",
+    "email": "michael@gmail.com",
+    "user_admin": false,
+    "password": "michael123",
     "savedDrugs": [
-        {
-            "proprietaryname": "Advil",
-            "active_numerator_strength": "256",
-            "active_ingred_unit": "mg/1"
-        }
-
+      {
+        "proprietaryname": "Lipitor",
+        "active_numerator_strength": "10",
+        "active_ingred_unit": "mg/1"
+      },
+      {
+        "proprietaryname": "Metformin",
+        "active_numerator_strength": "500",
+        "active_ingred_unit": "mg/1"
+      },
+      {
+        "proprietaryname": "Nexium",
+        "active_numerator_strength": "40",
+        "active_ingred_unit": "mg/1"
+      }
     ]
-    }
+  },
+  {
+    "name": "emma",
+    "email": "emma@gmail.com",
+    "user_admin": false,
+    "password": "emma123",
+    "savedDrugs": [
+      {
+        "proprietaryname": "Tylenol",
+        "active_numerator_strength": "500",
+        "active_ingred_unit": "mg/1"
+      },
+      {
+        "proprietaryname": "Amoxicillin",
+        "active_numerator_strength": "250",
+        "active_ingred_unit": "mg/1"
+      }
+    ]
+  },
+  {
+    "name": "jackson",
+    "email": "jackson@gmail.com",
+    "user_admin": false,
+    "password": "jackson123",
+    "savedDrugs": [
+      {
+        "proprietaryname": "Aspirin",
+        "active_numerator_strength": "325",
+        "active_ingred_unit": "mg/1"
+      },
+      {
+        "proprietaryname": "Albuterol",
+        "active_numerator_strength": "0.083",
+        "active_ingred_unit": "mg/1"
+      }
+    ]
+  }
 ]

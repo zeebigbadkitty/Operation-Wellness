@@ -14,26 +14,26 @@ const server = new ApolloServer({
 });
 
 //Get request for the drugs collection
-app.get('/drugs', async (req, res) => {
-  try {
-    const drugs = await Drug.find({});
-    res.json(drugs);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
+// app.get('/drugs', async (req, res) => {
+//   try {
+//     const drugs = await Drug.find({});
+//     res.json(drugs);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
 
 //Get request for drugs by user ID
-app.get('/drugs', authMiddleware, async (req, res) => {
-  try {
-    const drugs = await Drug.find({ userId: req.user._id });
-    res.json(drugs);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
+// app.get('/drugs', authMiddleware, async (req, res) => {
+//   try {
+//     const drugs = await Drug.find({ userId: req.user._id });
+//     res.json(drugs);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
