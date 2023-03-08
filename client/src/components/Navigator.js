@@ -13,28 +13,27 @@ import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
 import { ImageList, ImageListItem } from '@mui/material';
-
-// import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
-// import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
-// import TimerIcon from '@mui/icons-material/Timer';
-// import SettingsIcon from '@mui/icons-material/Settings';
-// import PhonelinkSetupIcon from '@mui/icons-material/PhonelinkSetup';
+import LoginIcon from '@mui/icons-material/Login';
+import MedicationLiquidIcon from '@mui/icons-material/MedicationLiquid';
+import SensorOccupiedIcon from '@mui/icons-material/SensorOccupied';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { Link } from 'react-router-dom';
 
 const categories = [
   {
     id: 'TaskBar',
     children: [
       {
-        id: 'Profile', icon: <PeopleIcon />,
-        active: true,
-      },
-      { id: 'Logout', icon: <PublicIcon /> },
+        id: 'Profile', icon: <PeopleIcon />, to: '/',},
+      { id: 'Signup', icon: <SensorOccupiedIcon />, to: '/signup',},
+      { id: 'Login', icon: <LoginIcon />, to: '/login',},
+      { id: 'Logout', icon: <LogoutIcon />, to: '/login',},
     ],
   },
 ];
 
 const item = {
-  py: '2px',
+  py: '10px',
   px: 3,
   color: 'rgba(255, 255, 255, 0.7)',
   '&:hover, &:focus': {
@@ -73,26 +72,28 @@ export default function Navigator(props) {
 
 
         <ListItem sx={{ ...item, ...itemCategory }}>
+          <ListItemButton component={Link} to={"/add"}>
           <ListItemIcon>
-            <HomeIcon />
+            <MedicationLiquidIcon />
           </ListItemIcon>
-          <ListItemText>Home</ListItemText>
+          <ListItemText>Add Medication</ListItemText>
+          </ListItemButton>
         </ListItem>
         {categories.map(({ id, children }) => (
           <Box key={id} sx={{ bgcolor: ' #642073ff' }}>
             <ListItem sx={{ py: 2, px: 3 }}>
               <ListItemText sx={{ color: '#fff' }}>{id}</ListItemText>
             </ListItem>
-            {children.map(({ id: childId, icon, active }) => (
+            {children.map(({ id: childId, icon, active, to }) => (
               <ListItem disablePadding key={childId}>
-                <ListItemButton selected={active} sx={item}>
+                <ListItemButton selected={active} sx={item} to={to}>
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText>{childId}</ListItemText>
                 </ListItemButton>
               </ListItem>
             ))}
 
-            <Divider sx={{ mt: 2 }} />
+            <Divider sx={{ mt: 4 }} />
           </Box>
         ))}
       </List>

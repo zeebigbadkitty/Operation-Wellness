@@ -1,60 +1,60 @@
-import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
-import axios from "axios"
+import * as React from "react";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import axios from "axios";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_DRUGS, QUERY_SINGLE_DRUG } from "../utils/queries";
+import { CSVLink, CSVDownload } from "react-csv";
+
 
 
 const columns = [
-  { field: 'company', headerName: 'Company', width: 150 },
-  { field: 'boosters', headerName: 'Boosters', width: 150 },
-  { field: 'rocket_name', headerName: 'Rocket Name', width: 160, },
-  { field: 'first_flight', headerName: 'First Flight', width: 160, },
-  { field: 'country', headerName: 'Country', width: 160, },
+  { field: "proprietaryname", headerName: "Drug Name", width: 450 },
+  { field: "active_numerator_strength", headerName: "Strength", width: 200 },
+  { field: "active_ingred_unit", headerName: "Strength Unit", width: 200 },
 ];
 
 
-
-export default function DataTable() { 
+export default function DataTable() {
   const [rows, setRows] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [csv, setCsv] = React.useState({});
 
-  React.useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch('/drugs');
-        const data = await response.json();
-        setRows(data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-        setIsLoading(false);
-      }
-    };
-    getData();
-  }, []);
+  const { loading, data } = useQuery(QUERY_USER_DRUGS);
+  const userDrugs = data?.userDrugs || [];
+  console.log(userDrugs);
 
-  return isLoading ? null : (
-    <div style={{ height: 430, width: '60%', }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        checkboxSelection
-      />
-    </div>
-  );
+  function handleDownloadCsv() {
+    const csvData = userDrugs.map((row) => ({
+      proprietaryname: row.proprietaryname,
+      active_numerator_strength: row.active_numerator_strength,
+      active_ingred_unit: row.active_ingred_unit,
+    }));
+    setCsv({
+      data: csvData,
+      fields: columns,
+    });
+  }
+  return (
+    <>
+    {loading ? (
+      <h1>Loading...</h1>
+    ) : (
+      <div style={{ height: 430, width: "60%" }}>
+        <DataGrid
+          columns={columns}
+          rows={userDrugs}
+          slots={{
+            toolbar: () => (
+              <GridToolbar>
+                <CSVLink {...csv} filename={"data.csv"}>
+                  Download me
+                </CSVLink>
+              </GridToolbar>
+            ),
+          }}
+        />
+      </div>
+    )}
+  </>
+);
 }
-
-
-const temp = [
-  { id: 1, noon: 'lexapro', am: 'Naloxen', pm:'Heloo', other: 'Hello World' },
-  { id: 2, noon: 'Fetanyl', am: 'Rybelsus', pm: 'Cymbalta', other: 'Hello World'},
-  { id: 3, noon: 'Oxycodon', am: 'Wegovy', pm:'Adderall', other: 'Hello World'},
-  { id: 4, noon: 'Vicodin', am: 'Xanax', pm: 'Viagra', other: 'Hello World'},
-  { id: 5, noon: 'Bunavail', am: 'Ativan', pm: 'Gilenya', other: 'Hello World'},
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-  { id: 6, noon: 'Nurtec', am: 'Acetominophen', pm: 'Brilinta', other: 'Hello World' },
-];
