@@ -1,6 +1,8 @@
 const { Drug, User } = require("../models");
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+const bcrypt = require('bcrypt');
+
 
 const resolvers = {
   Query: {
@@ -48,7 +50,7 @@ const resolvers = {
 
       return { token, user };
     },
-    
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
