@@ -2,7 +2,7 @@ import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import axios from "axios";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER_DRUGS, QUERY_SINGLE_DRUG } from "../utils/queries";
+import { QUERY_USER_DRUGS, QUERY_SINGLE_DRUG, QUERY_SINGLE_USER_WITH_DRUGS } from "../utils/queries";
 import { CSVLink, CSVDownload } from "react-csv";
 
 
@@ -20,10 +20,18 @@ export default function DataTable() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [csv, setCsv] = React.useState({});
 
-  const { loading, data } = useQuery(QUERY_USER_DRUGS);
-  const userDrugs = data?.userDrugs || [];
+  // const { loading, data } = useQuery(QUERY_USER_DRUGS);
+  const { loading, data } = useQuery(QUERY_SINGLE_USER_WITH_DRUGS);
+  const userDrugs = data?.user || [];
   console.log(userDrugs);
-
+  let newArray = [];
+  newArray.push(userDrugs);
+  console.log(newArray);
+  React.useEffect(() => {
+    
+      handleDownloadCsv();
+    
+  }, [])
   function handleDownloadCsv() {
     const csvData = userDrugs.map((row) => ({
       proprietaryname: row.proprietaryname,
@@ -34,6 +42,10 @@ export default function DataTable() {
       data: csvData,
       fields: columns,
     });
+    
+    console.log("columns",columns);
+    console.log("csvData",csvData);
+    console.log("userDrugs",userDrugs);
   }
   return (
     <>
@@ -42,8 +54,10 @@ export default function DataTable() {
     ) : (
       <div style={{ height: 430, width: "60%" }}>
         <DataGrid
+          //need an id for each row, getRowId from MUI, look at docs
           columns={columns}
-          rows={userDrugs}
+          rows={newArray}
+          getRowId={() => Math.floor(Math.random() * 100000000)}
           slots={{
             toolbar: () => (
               <GridToolbar>
