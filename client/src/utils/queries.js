@@ -17,7 +17,6 @@ export const QUERY_SINGLE_DRUG = gql`
   query drug($_id: String) {
     drug(_id: $_id) {
       _id
-      productndc
       producttypename
       active_numerator_strength
       active_ingred_unit
