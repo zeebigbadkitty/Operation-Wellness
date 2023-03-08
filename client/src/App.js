@@ -241,7 +241,8 @@ export default function Paperbase() {
           <Header onDrawerToggle={handleDrawerToggle} />
           <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#F9E9FAff' }}>
             <Routes>
-              <Route path="/" element={<Content />} />
+              <Route path="/" element={<Login />} />
+              <Route path="/profile" element={<Content />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/add" element={<Add />} />

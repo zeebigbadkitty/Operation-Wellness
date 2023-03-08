@@ -23,7 +23,7 @@ const categories = [
       {
         id: "Profile",
         icon: <PeopleIcon />,
-        to: "/",
+        to: "/profile",
       },
       { id: "Signup", icon: <SensorOccupiedIcon />, to: "/signup" },
       { id: "Login", icon: <LoginIcon />, to: "/login" },
