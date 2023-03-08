@@ -96,7 +96,7 @@ theme = {
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#642073ff',
+          backgroundColor: '#642073ff', //SideNav
         },
       },
     },

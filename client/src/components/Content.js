@@ -20,7 +20,7 @@ export default function DataTable() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [csv, setCsv] = React.useState({});
 
-  const { loading, data } = useQuery(QUERY_USER_DRUGS);
+  const { loading, data } = useQuery(QUERY_USER_DRUGS); 
   const userDrugs = data?.userDrugs || [];
   console.log(userDrugs);
 
