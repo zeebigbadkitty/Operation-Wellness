@@ -7,17 +7,14 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import HomeIcon from "@mui/icons-material/Home";
 import PeopleIcon from "@mui/icons-material/People";
-import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
-import PermMediaOutlinedIcon from "@mui/icons-material/PhotoSizeSelectActual";
-import PublicIcon from "@mui/icons-material/Public";
 import { ImageList, ImageListItem } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
+import logo4 from "../assets/logo4.png";
 
 const categories = [
   {
@@ -67,7 +64,7 @@ export default function Navigator(props) {
             {itemData.map((image, index) => (
               <ImageListItem>
                 <img
-                  src={require("../assets/logo4.png").default}
+                  src={logo4}
                   alt="Logo"
                   loading="lazy"
                 />
