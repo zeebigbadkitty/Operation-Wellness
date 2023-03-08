@@ -11,7 +11,7 @@ import Header from './components/Header';
 import { useMutation } from '@apollo/client';
 import Login from './components/Login';
 import Signup from './components/Signup';
-
+import Add from './components/Add';
 import {
   ApolloClient,
   InMemoryCache,
@@ -244,6 +244,7 @@ export default function Paperbase() {
               <Route path="/" element={<Content />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/add" element={<Add />} />
             </Routes>
           </Box>
           <Box component="footer" sx={{ p: 2, bgcolor: '#FFE2F2ff',}}> 
