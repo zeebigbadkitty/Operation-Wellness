@@ -1,4 +1,6 @@
+const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
 const userSchema = new Schema({
   name: {
@@ -19,10 +21,10 @@ const userSchema = new Schema({
     allowNull: false,
     minlength: 5,
   },
-  // user_admin: {
-  //   type: DataTypes.BOOLEAN,
-  //   defaultValue: false,
-  // },
+  user_admin: {
+    type: Boolean,
+    defaultValue: false,
+  },
   savedDrugs: [{
     type: Schema.Types.ObjectId,
     ref: 'Drug'
@@ -30,6 +32,20 @@ const userSchema = new Schema({
   
 });
 
-const User = model('User', userSchema);
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

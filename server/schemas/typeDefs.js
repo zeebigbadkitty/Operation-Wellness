@@ -19,13 +19,15 @@ const typeDefs = gql`
     name: String!
     email: String!
     password: String!
+    user_admin: Boolean!
     savedDrugs: [Drug]
   }
 
   type Query {
     userDrugs(userId: String): [Drug]
     findDrugs(drugName: String): [Drug]
-    user(userId: String): [User]
+    allUsers: [User]
+    user: User
   }
 
   type Auth {
@@ -34,7 +36,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(name: String!, email: String!, password: String!): Auth
     addDrugs(drugs: [DrugInput]): [Drug]
     addSavedDrugs(drugs: [ID]!): User
     login(email: String!, password: String!): Auth
