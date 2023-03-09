@@ -11,6 +11,9 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import logo12 from "../assets/logo12.png";
+
+
 // import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = [""];
@@ -116,9 +119,16 @@ function ResponsiveAppBar() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             OPERATION WELLNESS
+            <img
+              src={logo12}
+              alt="Logo"
+              css={{ mr: 2, display: "flex", width: "100px", height: "50px" }}
+            />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

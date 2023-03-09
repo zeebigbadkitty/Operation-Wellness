@@ -34,20 +34,3 @@ export const QUERY_SINGLE_USER = gql`
     }
   }
 `;
-
-
-export const QUERY_SINGLE_USER_WITH_DRUGS = gql`
-query User {
-  user {
-    _id
-    email
-    name
-    password
-    savedDrugs {
-      active_numerator_strength
-      productndc
-      proprietaryname
-    }
-  }
-}
-`;

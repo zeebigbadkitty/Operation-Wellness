@@ -31,11 +31,11 @@ function DrugSearch() {
 
   const handleAddDrug = (event) => {
     event.preventDefault();
-    
+    // TODO: Implement logic to add drug to user
     setMessage(`Added ${selectedDrug} to user ${userId}`);
   };
 
-  
+  // Filter drugs based on search term
   const filteredDrugs = drugs.filter((drug) =>
     drug.toLowerCase().includes(searchTerm.toLowerCase())
   );

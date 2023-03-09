@@ -4,13 +4,13 @@ const typeDefs = gql`
   type Drug {
     _id: ID!
     productndc: String
-    proprietaryname: String!
+    producttypename: String!
     active_numerator_strength: String!
     active_ingred_unit: String!
   }
   input DrugInput {
     productndc: String
-    proprietaryname: String!
+    producttypename: String!
     active_numerator_strength: String!
     active_ingred_unit: String!
   }

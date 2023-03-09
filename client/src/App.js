@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,7 +8,6 @@ import Link from '@mui/material/Link';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
-import { useMutation } from '@apollo/client';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Add from './components/Add';
@@ -96,7 +95,7 @@ theme = {
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#642073ff',
+          backgroundColor: '#642073ff', //SideNav
         },
       },
     },
